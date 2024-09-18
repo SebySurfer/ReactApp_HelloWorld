@@ -2,6 +2,10 @@ import { Fragment } from "react";
 
 
 function ListGroup(){
+  const items = ['Tokyo', 'Bangladesh', 'Iceland'];
+
+
+
 
   /*You can only return one element at a time, that is why if
    you have multiple elements, you have to encase it all into one 
@@ -12,6 +16,11 @@ function ListGroup(){
    all of our code wthout of needing to make newer types of elements to return the whole b lock of code 
   
   */
+
+   /* A JS expresion is not allowed in the middle of a jsx markup, 
+      in jsx, we can only use html elements or other react components. That is why we bring 
+      the following code within braces {}
+      */
   
   return (
     //This is what a fragment looks like: " <> ... </> ""
@@ -19,11 +28,8 @@ function ListGroup(){
     <> 
        <h1>List</h1>
     <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-      <li className="list-group-item">A third item</li>
-      <li className="list-group-item">A fourth item</li>
-      <li className="list-group-item">And a fifth one</li>
+        
+      {items.map(item => <li key = {item}>{item}</li>)}
     </ul>
 
     </>
