@@ -1,5 +1,6 @@
 import Message from "./Message";
 import ListGroup from "./assets/components/ListGroup";
+import Alert from "./assets/components/Alert";
 
 function App(){
   let items = ['Tokyo', 'Bangladesh', 'Iceland'];
@@ -10,6 +11,7 @@ function App(){
   return <div>
     <Message/>
     <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
+    <Alert>Hello World, again</Alert>
     </div>
 
 }
