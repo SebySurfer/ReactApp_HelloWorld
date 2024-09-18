@@ -4,14 +4,10 @@ import { Fragment, MouseEvent } from "react";
 interface Propert {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({items, heading}: Propert){
-
-  //items = [];
-
-
-
+function ListGroup({items, heading, onSelectItem}: Propert){
 
   /*You can only return one element at a time, that is why if
    you have multiple elements, you have to encase it all into one 
@@ -47,7 +43,7 @@ function ListGroup({items, heading}: Propert){
 
     <ul className="list-group">
         
-      {items.map( (item, index) => ( <li className = "list-group-item" key = {item} onClick={handleClick}>{item}</li>))}
+      {items.map( (item, index) => ( <li className = "list-group-item" key = {item} onClick={ () => {handleClick; onSelectItem(item);}}>{item}</li>))}
     </ul>
 
     </>
