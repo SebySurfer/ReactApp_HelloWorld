@@ -1,8 +1,12 @@
 import { Fragment, MouseEvent } from "react";  
 
 
-function ListGroup(){
-  let items = ['Tokyo', 'Bangladesh', 'Iceland'];
+interface Propert {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({items, heading}: Propert){
 
   //items = [];
 
@@ -37,7 +41,7 @@ function ListGroup(){
     // "{}" Can render anything dynamically (like JS) in the return statement
 
     <> 
-       <h1>List</h1>
+       <h1>{heading}</h1>
 
        {getMessage()}
 
