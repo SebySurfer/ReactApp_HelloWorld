@@ -1,4 +1,4 @@
-import { Fragment } from "react";  
+import { Fragment, MouseEvent } from "react";  
 
 
 function ListGroup(){
@@ -28,6 +28,9 @@ function ListGroup(){
       const getMessage = () =>{
         return items.length === 0 ? <p>No item found</p> : null;
       }
+
+      //Event handler 
+      const handleClick = (event: MouseEvent) => console.log(event);
   return (
     //This is what a fragment looks like: " <> ... </> ""
 
@@ -40,7 +43,7 @@ function ListGroup(){
 
     <ul className="list-group">
         
-      {items.map(item => <li key = {item}>{item}</li>)}
+      {items.map( (item, index) => ( <li className = "list-group-item" key = {item} onClick={handleClick}>{item}</li>))}
     </ul>
 
     </>
